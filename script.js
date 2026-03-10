@@ -63,11 +63,17 @@ function mostrarResultado(dados) {
       <span class="label">Entrada</span>
       <span class="value">${dados.entrada_data} às ${dados.entrada_hora}</span>
     </div>
-    <div class="os-row">
-      <span class="label">Saída prevista</span>
-      <span class="value">${dados.saida_data || "—"}</span>
-    </div>
   `;
+
+  // Saída só aparece quando ENTREGUE (backend só envia quando entregue)
+  if (dados.saida_data) {
+    html += `
+      <div class="os-row">
+        <span class="label">Saída</span>
+        <span class="value">${dados.saida_data} às ${dados.saida_hora}</span>
+      </div>
+    `;
+  }
 
   /* barra de progresso */
   if (dados.situacao === "SERVIÇO EM EXECUÇÃO") {
