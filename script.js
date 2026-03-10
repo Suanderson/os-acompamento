@@ -3,22 +3,18 @@ function consultarOS(){
 let os = document.getElementById("os").value
 let telefone = document.getElementById("telefone").value
 
-let url = "https://script.google.com/macros/s/AKfycbyGIGOxXHGtxXj5b4WHxbIU7IluC-Y7JWuZR_o1Dz0/exec?acao=consultarOS&os="+os+"&telefone="+telefone
+let url = "https://script.google.com/macros/s/AKfycbyGIGOxXHGtxXj5b4WHxbIU7IluC-Y7JWuZR_o1Dz0/exec?acao=consultarOS&os="+os+"&telefone="+telefone+"&callback=mostrarResultado"
 
-fetch(url)
-.then(res => res.json())
-.then(dados => {
+let script = document.createElement("script")
+script.src = url
+
+document.body.appendChild(script)
+
+}
+
+function mostrarResultado(dados){
 
 document.getElementById("resultado").innerHTML =
 "<pre>"+JSON.stringify(dados,null,2)+"</pre>"
-
-})
-.catch(err => {
-
-document.getElementById("resultado").innerHTML = "Erro na consulta"
-
-console.log(err)
-
-})
 
 }
