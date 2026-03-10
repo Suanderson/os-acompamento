@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 <meta charset="UTF-8">
 <title>Acompanhamento de Ordem de Serviço</title>
@@ -10,7 +11,23 @@
 
 <body>
 
-<h1>Acompanhamento de Ordem de Serviço</h1>
+<div class="container">
+
+<h1>Acompanhar Ordem de Serviço</h1>
+
+<div class="consulta">
+
+<input type="text" id="os" placeholder="Número da OS">
+
+<input type="text" id="telefone" placeholder="Telefone">
+
+<button onclick="consultarOS()">Consultar</button>
+
+</div>
+
+<div id="resultado"></div>
+
+</div>
 
 <script src="script.js"></script>
 
