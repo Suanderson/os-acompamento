@@ -35,14 +35,6 @@ html += "<h1>"+dados.os+"</h1>"
 
 html += "<p>Situação atual:<br>"+dados.situacao+"</p>"
 
-/* ENTREGUE */
-
-if(dados.situacao == "ENTREGUE"){
-
-html += "<p>Recebido por:<br>"+dados.recebido_por+"</p>"
-
-}
-
 html += "<p>Serviço:<br>"+dados.produto+"</p>"
 
 html += "<p>Entrada:<br>"+dados.entrada_data+" - "+dados.entrada_hora+"</p>"
@@ -79,7 +71,13 @@ html += "</div>"
 
 
 
+/* ENTREGUE */
 
+if(dados.situacao == "ENTREGUE"){
+
+html += "<p>Recebido por:<br>"+dados.recebido_por+"</p>"
+
+}
 
 
 
