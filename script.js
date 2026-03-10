@@ -71,16 +71,6 @@ html += "</div>"
 
 
 
-/* SERVIÇO CONCLUÍDO */
-
-if(dados.situacao == "SERVIÇO CONCLUÍDO"){
-
-html += "<p>Valor total: R$"+dados.valor_total+"</p>"
-
-html += "<img src='pix.png' width='200'>"
-
-}
-
 
 
 /* ENTREGUE */
