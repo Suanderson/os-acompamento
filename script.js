@@ -57,7 +57,7 @@ function mostrarResultado(dados) {
   html += `
     <div class="os-row">
       <span class="label">Serviço</span>
-      <span class="value">${dados.produto}</span>
+      <span class="value">${dados.desc_servico}</span>
     </div>
     <div class="os-row">
       <span class="label">Entrada</span>
@@ -102,3 +102,11 @@ function mostrarResultado(dados) {
 
   document.getElementById("resultado").innerHTML = html;
 }
+
+/* ── Enter para consultar ── */
+document.getElementById("os").addEventListener("keydown", function(e) {
+  if (e.key === "Enter") consultarOS();
+});
+document.getElementById("telefone").addEventListener("keydown", function(e) {
+  if (e.key === "Enter") consultarOS();
+});
