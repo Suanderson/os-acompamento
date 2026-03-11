@@ -57,10 +57,12 @@ function carregarDashboard() {
         osHoje.push(os);
       }
 
-      // faturamento — usa valor_total se disponível
-      const vt = parseFloat(String(os.valor_total || "0").replace(",", ".")) || 0;
-      if (dentroDoMes(os.entrada_data, mesAtual, anoAtual)) totalMes += vt;
-      if (dentroDoAno(os.entrada_data, anoAtual)) totalAno += vt;
+      // faturamento — só conta CONCLUÍDO ou ENTREGUE, filtra por saida_data
+      if (sit === "SERVIÇO CONCLUÍDO" || sit === "ENTREGUE") {
+        const vt = parseFloat(String(os.valor_total || "0").replace(",", ".")) || 0;
+        if (dentroDoMes(os.saida_data, mesAtual, anoAtual)) totalMes += vt;
+        if (dentroDoAno(os.saida_data, anoAtual)) totalAno += vt;
+      }
 
       // contagem por status
       const s = os.situacao || "Sem status";
