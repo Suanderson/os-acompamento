@@ -417,6 +417,37 @@ function toggleGrupo(index) {
   if (grupo) grupo.classList.toggle("collapsed");
 }
 
+
+/* ══════════════════════════════
+   DRAWER MOBILE
+══════════════════════════════ */
+function abrirSidebar() {
+  document.getElementById("sidebar").classList.add("open");
+  document.getElementById("sidebar-overlay").classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+ 
+function fecharSidebar() {
+  document.getElementById("sidebar").classList.remove("open");
+  document.getElementById("sidebar-overlay").classList.remove("show");
+  document.body.style.overflow = "";
+}
+ 
+function sincronizarBtnMenu() {
+  const isMobile = window.innerWidth <= 700;
+  const btnLista = document.getElementById("btn-menu");
+  const btnForm  = document.getElementById("btn-menu-form");
+  const lista    = document.getElementById("secao-lista");
+  const form     = document.getElementById("secao-os");
+  if (btnLista) btnLista.style.display = isMobile && lista.style.display !== "none" ? "flex" : "none";
+  if (btnForm)  btnForm.style.display  = isMobile && form.style.display  !== "none" ? "flex" : "none";
+}
+ 
+window.addEventListener("resize", sincronizarBtnMenu);
+window.addEventListener("load",   sincronizarBtnMenu);
+document.addEventListener("keydown", function(e) { if (e.key === "Escape") fecharSidebar(); });
+
+
 /* ══════════════════════════════
    START
 ══════════════════════════════ */

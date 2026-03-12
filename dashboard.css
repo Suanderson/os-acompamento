@@ -33,7 +33,7 @@
 }
 
 .btn-atualizar:hover {
-  border-color: var(--lime);
+  border-color: var(--azure-pastel);
   color: var(--gray-800);
 }
 
@@ -135,7 +135,7 @@
 }
 
 .dash-card.destaque .dash-card-label { color: #666; }
-.dash-card.destaque .dash-card-value { color: var(--lime); }
+.dash-card.destaque .dash-card-value { color: var(--azure-pastel); }
 .dash-card.destaque .dash-card-sub   { color: #555; }
 
 /* ── LINHA INFERIOR ── */
@@ -197,7 +197,7 @@
 .status-bar-fill {
   height: 100%;
   border-radius: 99px;
-  background: var(--lime);
+  background: var(--azure-pastel);
   transition: width .8s cubic-bezier(.4,0,.2,1);
   width: 0%;
 }
@@ -217,7 +217,7 @@
 .bar-execucao   { background: #ca8a04; }
 .bar-concluido  { background: #16a34a; }
 .bar-saiu       { background: #9333ea; }
-.bar-entregue   { background: var(--lime); }
+.bar-entregue   { background: var(--azure-pastel); }
 
 /* LISTA OS HOJE */
 .os-hoje-item {

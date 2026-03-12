@@ -25,8 +25,8 @@
 }
 
 .hist-busca-box:focus-within {
-  border-color: var(--lime);
-  box-shadow: 0 0 0 4px rgba(181,212,0,.1);
+  border-color: var(--azure-pastel);
+  box-shadow: 0 0 0 4px #7ccaeb30;
 }
 
 .hist-busca-box > svg {
@@ -77,7 +77,7 @@
   width: 32px; height: 32px;
   border-radius: 50%;
   border: 3px solid var(--gray-200);
-  border-top-color: var(--lime);
+  border-top-color: var(--azure-pastel);
   animation: spinH .9s linear infinite;
 }
 
@@ -194,14 +194,14 @@
 
 /* primeiro evento */
 .hist-evento.primeiro::before {
-  background: var(--lime);
-  box-shadow: 0 0 0 2px var(--lime);
+  background: var(--black);
+  box-shadow: 0 0 0 2px var(--black);
 }
 
 /* último evento — destaque */
 .hist-evento.ultimo::before {
-  background: var(--lime);
-  box-shadow: 0 0 0 3px rgba(181,212,0,.3);
+  background: var(--black);
+  box-shadow: 0 0 0 3px #7ccaeb99;
   width: 12px; height: 12px;
   left: -31px;
   top: 5px;
@@ -215,7 +215,7 @@
   transition: border-color .2s;
 }
 
-.hist-evento-card:hover { border-color: var(--lime); }
+.hist-evento-card:hover { border-color: var(--azure-pastel); }
 
 .hist-evento-top {
   display: flex;

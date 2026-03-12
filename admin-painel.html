@@ -9,6 +9,9 @@
 </head>
 <body>
 
+  <!-- OVERLAY MOBILE -->
+  <div class="sidebar-overlay" id="sidebar-overlay" onclick="fecharSidebar()"></div>
+
   <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-logo">
@@ -22,7 +25,7 @@
     </div>
 
     <nav class="sidebar-nav">
-      <a class="nav-item active" id="nav-os" onclick="mostrarLista()">
+      <a class="nav-item active" id="nav-os" onclick="mostrarLista(); fecharSidebar()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
           <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
@@ -68,7 +71,14 @@
     <!-- ══ LISTA DE OS ══ -->
     <section id="secao-lista">
       <div class="topbar">
-        <h1>Ordens de Serviço</h1>
+        <div class="topbar-left">
+          <button class="btn-menu" id="btn-menu" onclick="abrirSidebar()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+          <h1>Ordens de Serviço</h1>
+        </div>
         <div class="topbar-actions">
           <select class="filtro-status-sel" id="filtro-status" onchange="filtrarPorStatus()">
             <option value="">Todos os status</option>
@@ -105,6 +115,11 @@
     <!-- ══ FORMULÁRIO OS ══ -->
     <section id="secao-os" style="display:none">
       <div class="os-form-header">
+        <button class="btn-menu" id="btn-menu-form" onclick="abrirSidebar()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
         <button class="btn-voltar" onclick="mostrarLista()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="15 18 9 12 15 6"/>
@@ -190,12 +205,11 @@
           </div>
         </div>
 
-        <!-- HISTÓRICO DA OS (mini linha do tempo dentro do formulário) -->
+        <!-- HISTÓRICO DA OS -->
         <div class="form-section full" id="secao-historico-os" style="display:none">
           <p class="section-title">📜 Histórico Interno</p>
           <div class="historico-lista" id="historico-lista-os"></div>
         </div>
-
       </div>
 
       <div class="form-actions">
@@ -225,7 +239,6 @@
         </div>
       </div>
     </section>
-
 
   </main>
 
